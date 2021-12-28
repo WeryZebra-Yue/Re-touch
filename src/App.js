@@ -1,10 +1,12 @@
 
 import './App.css';
 import {useRef} from 'react';
-import logo from './Group 50.svg';
+import logo from './Group.svg';
+import Popup from 'reactjs-popup';
 function App() {
   const canvasRef = useRef(null);
   const imgRef = useRef(null);
+  const TextRef = useRef(null);
   const inputRef = useRef(null);
   const MainApp = useRef(null);
   
@@ -19,10 +21,28 @@ function App() {
     return areas;
  }
   const cutImage = (e) => {
-    // console.log(window.location.href+)
+     if(!document.cv){
+      if(TextRef){
+        TextRef.current.innerHTML = ("Opencv.js is not loaded yet!")
+        setTimeout(()=>{
+          TextRef.current.innerHTML = ("Image Frame - 2")
+
+        },1000)
+      }
+      return;
+     }
+    // console.log(logo)
+      let log = window.location.href
+      log = log.substring(0, log.length - 1)+logo
+    
       const cv = document.cv
-      if(!imgRef.current.src || imgRef.current.src === window.location.href+"static/media/Group%2050.764bafbcb109878a6cc80663a84baddb.svg"){
+      if(!imgRef.current.src || imgRef.current.src ===  log){
       console.log('no image')
+      TextRef.current.innerHTML = ("No Image!")
+      setTimeout(()=>{
+        TextRef.current.innerHTML = ("Image Frame - 2")
+
+      },1000)
       return;
       }
       let src = cv.imread(imgRef.current);
@@ -63,7 +83,9 @@ function App() {
          <div className="header">
            <img src={logo}></img>
         </div>
+       
         <div  className={"app"} >
+        
     <div className="inputoutput">
     
       <img  className='image' src={logo} ref={imgRef} id="imageSrc" />
@@ -84,7 +106,7 @@ function App() {
    
       <canvas className=' canva' ref={canvasRef} id="canvasOutput" ></canvas>
   
-      <div className="caption"> Image Frame - 2</div>
+      <div className="caption" ref={TextRef}> Image Frame - 2</div>
 
       <button className='button' onClick={()=>{
 
@@ -94,7 +116,7 @@ function App() {
         cutImage();
         imgRef.current.style = "max-height: 900px; max-width: 100%!important;";
         MainApp.current.style = "visibility: visible";
-     
+        
       }}>Crop and Resize</button>
     </div>
     </div>
