@@ -54,8 +54,19 @@
   border-radius: 10px;
   overflow: hidden;
   min-width: 45%!important;
-  max-width: 100%;
+  max-width: 80%;
 }
+@media screen and (max-width: 600px) {
+  .inputoutput{
+    /* min-width: 100%!important; */
+    max-width: 90%;
+  }
+  .button{
+    width: 70%!important;
+  }
+}
+  
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -67,7 +78,7 @@
   max-height: 900px;
   height: auto;
   width: auto;
-  max-width: 100%!important;
+  max-width: 80%!important;
   margin: 20px;
 
 
@@ -105,7 +116,7 @@
   max-height: 900px;
   height: auto;
   width: auto;
-  max-width: 100%!important;
+  max-width: 80%!important;
   margin: 20px;
 
 }

@@ -113,9 +113,22 @@ function App() {
         MainApp.current.style = "visibility: hidden";
        
         imgRef.current.style = "width: auto!important; height: auto!important;max-height:none!important;max-width:none!important;";
-        cutImage();
-        imgRef.current.style = "max-height: 900px; max-width: 100%!important;";
-        MainApp.current.style = "visibility: visible";
+        try{
+          cutImage();
+        }
+        catch{
+          const cv = document.cv
+          cv.imshow('canvasOutput', cv.imread(imgRef.current));
+       
+
+        }
+        finally{
+          imgRef.current.style = "max-height: 900px; max-width: 80%!important;";
+          MainApp.current.style = "visibility: visible";
+          
+          
+        }
+        
         
       }}>Crop and Resize</button>
     </div>
