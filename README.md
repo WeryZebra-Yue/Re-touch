@@ -1,5 +1,6 @@
 Explanation: 
 I have used OpenCV for Image processing
+
 Step 1: First of all we take image and change into gray scale 
 
 Step 2 : we find edges using opencv 
