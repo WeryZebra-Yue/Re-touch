@@ -2,7 +2,7 @@
 import './App.css';
 import {useRef} from 'react';
 import logo from './Group.svg';
-import Popup from 'reactjs-popup';
+
 function App() {
   const canvasRef = useRef(null);
   const imgRef = useRef(null);
@@ -78,8 +78,7 @@ function App() {
 
   return (
     <div ref={MainApp}>
-      {/* <Header className="Header"/>
-       */}
+    
          <div className="header">
            <img src={logo}></img>
         </div>
@@ -109,8 +108,8 @@ function App() {
       <div className="caption" ref={TextRef}> Image Frame - 2</div>
 
       <button className='button' onClick={()=>{
+       TextRef.current.innerHTML = ("Loading...")
 
-        MainApp.current.style = "visibility: hidden";
        
         imgRef.current.style = "width: auto!important; height: auto!important;max-height:none!important;max-width:none!important;";
         try{
@@ -126,9 +125,10 @@ function App() {
           imgRef.current.style = "max-height: 900px; max-width: 80%!important;";
           MainApp.current.style = "visibility: visible";
           
+       TextRef.current.innerHTML = ("Image Frame - 2")
           
         }
-        
+      
         
       }}>Crop and Resize</button>
     </div>
