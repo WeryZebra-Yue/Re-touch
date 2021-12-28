@@ -7,6 +7,7 @@ function App() {
   const imgRef = useRef(null);
   const inputRef = useRef(null);
   const MainApp = useRef(null);
+  
 
   const getAreas = (contours)=>  {
     const cv = document.cv
@@ -18,9 +19,9 @@ function App() {
     return areas;
  }
   const cutImage = (e) => {
-    
+    // console.log(window.location.href+)
       const cv = document.cv
-      if(!imgRef.current.src || imgRef.current.src === "http://blog.addthiscdn.com/wp-content/uploads/2014/11/addthis-react-flux-javascript-scaling.png"){
+      if(!imgRef.current.src || imgRef.current.src === window.location.href+"static/media/Group%2050.764bafbcb109878a6cc80663a84baddb.svg"){
       console.log('no image')
       return;
       }
@@ -65,7 +66,7 @@ function App() {
         <div  className={"app"} >
     <div className="inputoutput">
     
-      <img  className='image' src="http://blog.addthiscdn.com/wp-content/uploads/2014/11/addthis-react-flux-javascript-scaling.png"ref={imgRef} id="imageSrc" />
+      <img  className='image' src={logo} ref={imgRef} id="imageSrc" />
       <div className="caption"> Image Frame - 1</div>
   
        <input  className='button' ref={inputRef} type="file" id="fileInput" name="file" 
