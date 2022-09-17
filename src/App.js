@@ -1,7 +1,12 @@
-
+/* eslint-disable */
 import './App.css';
 import {useRef} from 'react';
 import logo from './Group.svg';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import Stack from '@mui/material/Stack';
+import DownloadIcon from '@mui/icons-material/Download';
 
 function App() {
   const canvasRef = useRef(null);
@@ -75,6 +80,12 @@ function App() {
       src.delete(); dst.delete(); contours.delete(); hierarchy.delete();
   
   };
+  const download = () => {
+    var link = document.createElement('a');
+    link.download = 'filename.png';
+    link.href = document.getElementById('canvasOutput').toDataURL()
+    link.click();
+  }
 
   return (
     <div ref={MainApp}>
@@ -89,8 +100,10 @@ function App() {
     
       <img  className='image' src={logo} ref={imgRef} id="imageSrc" />
       <div className="caption"> Image Frame - 1</div>
-  
-       <input  className='button' ref={inputRef} type="file" id="fileInput" name="file" 
+      <Stack direction="row" alignItems="center" spacing={2}>
+      <Button variant="contained" component="label">
+        Upload
+        <input hidden ref={inputRef} type="file" accept='image/*' id="fileInput" name="file" 
       
       onInput={(e)=>{
         
@@ -98,7 +111,22 @@ function App() {
         imgRef.current.src = URL.createObjectURL(e.target.files[0]);
        
         
-      }} /></div>
+      }} />
+      </Button>
+      <IconButton color="primary" aria-label="upload picture" component="label">
+      <input hidden  ref={inputRef} type="file" accept='image/*' id="fileInput" name="file" 
+      
+      onInput={(e)=>{
+        
+        imgRef.current.src = URL.createObjectURL(e.target.files[0]); 
+        imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+       
+        
+      }} />
+        <PhotoCamera />
+      </IconButton>
+    </Stack>
+</div>
  
   
     <div className="inputoutput">
@@ -106,11 +134,11 @@ function App() {
       <canvas className=' canva' ref={canvasRef} id="canvasOutput" ></canvas>
   
       <div className="caption" ref={TextRef}> Image Frame - 2</div>
+      <Stack direction="row" alignItems="center" spacing={2}>
 
       <button className='button' onClick={()=>{
        TextRef.current.innerHTML = ("Loading...")
 
-       
         imgRef.current.style = "width: auto!important; height: auto!important;max-height:none!important;max-width:none!important;";
         try{
           cutImage();
@@ -119,7 +147,6 @@ function App() {
           const cv = document.cv
           cv.imshow('canvasOutput', cv.imread(imgRef.current));
        
-
         }
         finally{
           imgRef.current.style = "max-height: 900px; max-width: 80%!important;";
@@ -130,7 +157,7 @@ function App() {
         }
       
         
-      }}>Crop and Resize</button>
+      }}>Crop and Resize</button><DownloadIcon onClick={download}></DownloadIcon></Stack>
     </div>
     </div>
     </div>
