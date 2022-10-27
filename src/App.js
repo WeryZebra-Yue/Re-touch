@@ -95,8 +95,7 @@ function App() {
 
       <div className={"app"}>
         <div className="inputoutput">
-          <img className="image" src={logo} ref={imgRef} id="imageSrc" />
-          <div className="caption"> Image Frame - 1</div>
+          <h2 className="caption"> Image Frame - 1</h2>
 
           <input
             className="button"

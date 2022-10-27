@@ -14,6 +14,7 @@
 }
 .caption {
   padding: 10px;
+  letter-spacing: -0.04em;
 }
 .header {
   position: fixed;
@@ -31,7 +32,6 @@
 .inputoutput:hover {
   border: 3px solid rgb(165, 42, 42, 0.5);
   transition: all 0.1s ease;
-  transform: scale(1.01);
   box-shadow: rgb(165, 42, 42, 0.1) 0 5px 6px 5px;
 }
 .inputoutput {
@@ -87,12 +87,12 @@
   font-weight: 600;
   justify-content: center;
   line-height: 1.25;
-  margin: 10px;
+  margin-bottom: 10px;
   min-height: 3rem;
   padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
   position: relative;
   text-decoration: none;
-  transition: all 250ms;
+  transition: all 100ms;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -109,8 +109,8 @@
 .button:hover,
 .button:focus {
   border: 1px solid rgb(165, 42, 42, 0.15);
-
   box-shadow: rgb(165, 42, 42, 0.1) 0 4px 12px;
+  background-color: rgb(165, 42, 42, 0.05);
   color: rgba(0, 0, 0, 0.65);
 }
 
