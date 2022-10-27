@@ -6,21 +6,18 @@
   align-items: center;
   margin-top: 100px;
   z-index: -100;
-  
-
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-.caption{
+.caption {
   padding: 10px;
-
 }
-.header{
+.header {
   position: fixed;
-  top: 0; 
+  top: 0;
   padding: 5px;
   width: 100%;
   z-index: 100;
@@ -28,44 +25,39 @@
   max-height: 100px;
   display: flex;
   justify-content: center;
-  border-bottom: 2px solid rgb(109, 36, 36,0.7);
-  box-shadow: rgb(109, 36, 36,0.1) 0 4px 12px;
-
-
+  border-bottom: 2px solid rgb(109, 36, 36, 0.7);
+  box-shadow: rgb(109, 36, 36, 0.1) 0 4px 12px;
 }
-.inputoutput:hover{
-  border: 3px solid rgb(165, 42, 42,0.5);  
+.inputoutput:hover {
+  border: 3px solid rgb(165, 42, 42, 0.5);
   transition: all 0.5s ease;
   transform: scale(1.02);
-  
+
   box-shadow: rgb(165, 42, 42) 0 1px 3px 0;
-  
 }
-.inputoutput{
-  
+.inputoutput {
   display: flex;
   transition: all 0.5s ease;
   background-color: white;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 3px solid rgb(165, 42, 42,0.15);  
+  border: 3px solid rgb(165, 42, 42, 0.15);
   margin: 10px;
   border-radius: 10px;
   overflow: hidden;
-  min-width: 45%!important;
+  min-width: 45% !important;
   max-width: 80%;
 }
 @media screen and (max-width: 600px) {
-  .inputoutput{
+  .inputoutput {
     /* min-width: 100%!important; */
     max-width: 90%;
   }
-  .button{
-    width: 70%!important;
+  .button {
+    width: 70% !important;
   }
 }
-  
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -73,35 +65,32 @@
   }
 }
 
-.image{
-
+.image {
   max-height: 900px;
   height: auto;
   width: auto;
-  max-width: 80%!important;
+  max-width: 80% !important;
   margin: 20px;
-
-
 }
 .button {
-
   align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid rgb(165, 42, 42,0.50);
-  border-radius: .25rem;
+  background-color: #ffffff;
+  border: 1px solid rgb(165, 42, 42, 0.5);
+  border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
   color: brown;
   cursor: pointer;
   display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
   justify-content: center;
   line-height: 1.25;
   margin: 10px;
   min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
   position: relative;
   text-decoration: none;
   transition: all 250ms;
@@ -111,20 +100,18 @@
   vertical-align: baseline;
   width: auto;
 }
-.canva{
-  
+.canva {
   max-height: 900px;
   height: auto;
   width: auto;
-  max-width: 80%!important;
+  max-width: 80% !important;
   margin: 20px;
-
 }
 .button:hover,
 .button:focus {
-  border: 1px solid rgb(165, 42, 42,0.15);
+  border: 1px solid rgb(165, 42, 42, 0.15);
 
-  box-shadow: rgb(165, 42, 42,0.1) 0 4px 12px;
+  box-shadow: rgb(165, 42, 42, 0.1) 0 4px 12px;
   color: rgba(0, 0, 0, 0.65);
 }
 
