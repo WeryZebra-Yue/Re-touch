@@ -113,10 +113,10 @@ function App() {
         <div className="inputoutput">
           <canvas className=" canva" ref={canvasRef} id="canvasOutput"></canvas>
 
-          <div className="caption" ref={TextRef}>
+          <h2 className="caption" ref={TextRef}>
             {" "}
             Image Frame - 2
-          </div>
+          </h2>
 
           <button
             className="button"
